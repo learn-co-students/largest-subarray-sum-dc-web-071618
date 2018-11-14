@@ -22,12 +22,12 @@
 //   return sum;
 // }
 
-function largestSubarraySum(a) {
-  var now = 0,
-    prev = 0;
-  for (var i = 0; i < a.length; i++) {
-    prev = Math.max(0, prev + a[i]);
-    now = Math.max(prev, now);
+function largestSubarraySum(array) {
+  let max = 0;
+  let current = 0;
+  for (let i = 0; i < array.length; i++) {
+    current = Math.max(0, current + array[i]);
+    max = Math.max(current, max);
   }
-  return now;
+  return max;
 }
